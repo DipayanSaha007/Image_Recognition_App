@@ -15,16 +15,16 @@ def haar_wavelet_transform_2d(img):
     # Step 1: Horizontal wavelet transform
     img_H = np.zeros_like(img)
     for i in range(rows):
-        # If the number of columns is odd, adjust slices to ensure same length
+        # Handle odd-sized columns
         if cols % 2 != 0:
             img_H[i, :-1:2] = (img[i, :-1:2] + img[i, 1::2]) / 2  # Skip last column for odd-sized rows
         else:
-            img_H[i] = (img[i, ::2] + img[i, 1::2]) / 2
+            img_H[i, :] = (img[i, ::2] + img[i, 1::2]) / 2
 
     # Step 2: Vertical wavelet transform
     img_V = np.zeros_like(img_H)
     for j in range(cols):
-        # If the number of rows is odd, adjust slices to ensure same length
+        # Handle odd-sized rows
         if rows % 2 != 0:
             img_V[:-1:2, j] = (img_H[:-1:2, j] + img_H[1::2, j]) / 2  # Skip last row for odd-sized columns
         else:
