@@ -2,7 +2,8 @@ streamlit==1.40.2
 scikit-learn==1.5.1
 pandas==2.2.2
 numpy==1.26.4
-Pillow==10.0.1  # For image handling
-requests==2.31.0  # Optional: If classify_image makes API calls
-matplotlib==3.9.1  # Include only if plots are used
-seaborn==0.13.2    # Include only if Seaborn visualizations are used
+Pillow==10.0.1
+requests==2.31.0
+opencv-python==4.8.1.78  # For image processing
+matplotlib==3.9.1        # Include only if plots are used
+seaborn==0.13.2          # Include only if Seaborn visualizations are used
